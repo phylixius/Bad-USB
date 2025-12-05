@@ -4,11 +4,8 @@
 
 #include <Keyboard.h>
 
-const String RENDER_URL = "https://raw.githubusercontent.com/Windows-Update-Proxy/Updater/refs/heads/main/Windows/WindowsUpdate.ps1";
 const int DELAY_STARTUP = 3000;  // Wacht tot systeem klaar is
-const int DELAY_SHORT = 200;
 const int DELAY_MEDIUM = 500;
-const int DELAY_LONG = 2000;
 
 void setup() {
   // Wacht tot systeem volledig geboot is
