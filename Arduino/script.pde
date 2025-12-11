@@ -47,7 +47,7 @@ void typeChar(char c) {
       case ')': key = 0x2d; break; // - toets op QWERTY
       case '\'': key = 0x21; break; // 4 toets - WAS MISSING!
       case '1': key = 0x1e; mod = MOD_SHIFT_LEFT; break;
-      case '2': key = 0x1f; mod = MOD_SHIFT_LEFT; break;
+      case '4': key = 0x21; mod = MOD_SHIFT_LEFT; break;
     }
   }
   
