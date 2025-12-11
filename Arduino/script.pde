@@ -76,6 +76,16 @@ void setup() {
   // Enter
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   DigiKeyboard.delay(100);
+
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  DigiKeyboard.delay(500);
+  
+  // Type command
+  typeString("cmd /c");
+  
+  // Enter
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(100);
 }
 
 void loop() {
